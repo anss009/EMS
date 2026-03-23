@@ -3,9 +3,14 @@
 * {
   font-family: 'Inter', sans-serif;
   box-sizing: border-box;
-
+}
+*{
+  color: white;
 }
 body{
   background-color: black;
-  color: white;
+  
+}
+#tasklist::-webkit-scrollbar{
+  display: none;
 }
