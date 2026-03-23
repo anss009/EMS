@@ -1,9 +1,9 @@
 import React, { Children } from 'react'
 
-const TaskContext = ({Children}) => {
+const TaskContext = ({children}) => {
   return (
     <div>
-      {Children}
+      {children}
     </div>
   )
 }
