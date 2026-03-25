@@ -25,3 +25,11 @@ const employee = [
     "password": "112233"
   }
 ]
+
+const admin = [
+  {
+    "id": 1,
+    "email": "admin@company.com",
+    "password": "112233"
+  }
+]
