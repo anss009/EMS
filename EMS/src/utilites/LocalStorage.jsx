@@ -397,10 +397,14 @@ const admin = [
 
 
 export  const setLocalStorage = ()=>{
-        localStorage.setItem("employee", JSON.stringify(employees))
+        localStorage.setItem("employees", JSON.stringify(employees))
+        localStorage.setItem("admin", JSON.stringify(admin))
 }
 
 
 export  const getLocalStorage = ()=>{
-
+        const employees = localStorage.getItem('employees')
+        const admin  = localStorage.getItem('admin')
+        console.log(JSON.parse(employees))
+        console.log(JSON.parse(admin))
 }

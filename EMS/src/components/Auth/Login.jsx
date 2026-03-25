@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 
-export const Login = () => {
+export const Login = ({handleLogin}) => {
+  console.log(handleLogin)
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Login submitted', { email, password })
+    e.preventDefault()  
+    handleLogin(email, password)
+    setEmail("")
+    setPassword("")
+
   }
 
   return (
