@@ -20,12 +20,18 @@ const App = () => {
     const authData = useContext(AuthContext)
     console.log(authData)
 
+    useEffect(()=>{
+        const loggedInUser = localStorage.getItem('loggedInUser')
+        if(loggedInUser){
+          setUser(loggedInUser)
+        } 
+    },[])
 
 
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
         setUser('admin')
-      }else if (email == "employee5@company.com" && password == 112233){
+      }else if (authData && authData.employees.find((e)=> e.email == email && e.password == password)){
         setUser('Employee')
       }
       else{
