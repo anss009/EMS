@@ -18,7 +18,7 @@ const App = () => {
 
     const [user, setUser] = useState(null)
     const authData = useContext(AuthContext)
-    
+    console.log(authData)
 
 
 
