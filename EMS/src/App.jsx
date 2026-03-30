@@ -24,6 +24,9 @@ const App = () => {
         const loggedInUser = localStorage.getItem('loggedInUser')
         if(loggedInUser){
           setUser(loggedInUser)
+          if(loggedInUser){
+            setUser(loggedInUser.role)
+          }
         } 
     },[])
 
@@ -31,8 +34,10 @@ const App = () => {
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
         setUser('admin')
+        localStorage.setItem('loggedInUser', JSON.stringify({role:'admin'}))
       }else if (authData && authData.employees.find((e)=> e.email == email && e.password == password)){
         setUser('Employee')
+        localStorage.setItem('loggedInUser', JSON.stringify({role:'employee'}))
       }
       else{
         alert("Invalid Crendential")
