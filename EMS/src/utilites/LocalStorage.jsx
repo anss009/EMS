@@ -403,8 +403,8 @@ export  const setLocalStorage = ()=>{
 
 
 export  const getLocalStorage = ()=>{
-        const employees = localStorage.getItem('employees')
-        const admin  = localStorage.getItem('admin')
+        const employees = JSON.parse(localStorage.getItem('employees'))
+        const admin  = JSON.parse(localStorage.getItem('admin'))
 
         return {employees, admin}
 }
