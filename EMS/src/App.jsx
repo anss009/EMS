@@ -33,12 +33,10 @@ const App = () => {
 
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
-        setUser({role:'admin'})
+        setUser('admin')
         localStorage.setItem('loggedInUser', JSON.stringify({role:'admin'}))
-      }else if (authData){
-        const employee  = authData.employees.find((e)=> e.email == email && e.password == password) 
-        if(employee)
-        setUser({role:'Employee'})
+      }else if (authData && authData.employees.find((e)=> e.email == email && e.password == password)){
+        setUser('Employee')
         localStorage.setItem('loggedInUser', JSON.stringify({role:'employee'}))
       }
       else{
