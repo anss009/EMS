@@ -3,8 +3,8 @@ import { Login } from './components/Auth/Login'
 import { EmployeeDashboard } from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import { useEffect } from 'react'
-import { getLocalStorage, setLocalStorage } from './utilites/LocalStorage'
 import { AuthContext } from './context/AuthProvider'
+import { getLocalStorage, setLocalStorage } from './utilites/LocalStorage'
 
 const App = () => {
   // useEffect(()=>{
@@ -12,19 +12,21 @@ const App = () => {
   //     getLocalStorage()
   // },)
 
+  useEffect(()=>{
+    setLocalStorage()
+},[ ])
 
     const [user, setUser] = useState(null)
     const authData = useContext(AuthContext)
-    console.log(authData.employees)
+    
+
 
 
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
         setUser('admin')
-        console.log(user)
       }else if (email == "employee5@company.com" && password == 112233){
         setUser('Employee')
-        console.log(user) 
       }
       else{
         alert("Invalid Crendential")
@@ -32,9 +34,7 @@ const App = () => {
   }
 
 
-  const data = useContext(AuthContext)
-  console.log(data)
-  return (
+  return ( 
     <>
     {!user ? <Login handleLogin = {handleLogin} />: ''}
     {user  == 'admin' ? <AdminDashboard/>: <EmployeeDashboard/>}
