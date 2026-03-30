@@ -14,6 +14,9 @@ const App = () => {
 
 
     const [user, setUser] = useState(null)
+    const authData = useContext(AuthContext)
+    console.log(authData.employees)
+
 
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
