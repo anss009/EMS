@@ -1,9 +1,15 @@
 const employees = [
   {
     "id": 1,
-    "firstName": "Arsalan",
-    "email": "employee1@company.com",
-    "password": "112233",
+    "firstName": "Arjun",
+    "email": "e@e.com",
+    "password": "123",
+    "taskCounts": {
+      "active": 2,
+      "newTask": 1,
+      "completed": 1,
+      "failed": 0
+    },
     "tasks": [
       {
         "title": "Fix login page bug",
@@ -62,6 +68,12 @@ const employees = [
     "firstName": "Bilal",
     "email": "employee2@company.com",
     "password": "112233",
+    "taskCounts": {
+      "active": 2,
+      "newTask": 1,
+      "completed": 1,
+      "failed": 0
+    },
     "tasks": [
       {
         "title": "Design new dashboard UI",
@@ -130,6 +142,12 @@ const employees = [
     "firstName": "Hamza",
     "email": "employee3@company.com",
     "password": "112233",
+    "taskCounts": {
+      "active": 2,
+      "newTask": 1,
+      "completed": 1,
+      "failed": 0
+    },
     "tasks": [
       {
         "title": "Optimize database queries",
@@ -208,6 +226,12 @@ const employees = [
     "firstName": "Mustafa",
     "email": "employee4@company.com",
     "password": "112233",
+    "taskCounts": {
+      "active": 2,
+      "newTask": 1,
+      "completed": 1,
+      "failed": 0
+    },
     "tasks": [
       {
         "title": "Client onboarding call",
@@ -296,6 +320,12 @@ const employees = [
     "firstName": "Zeeshan",
     "email": "employee5@company.com",
     "password": "112233",
+    "taskCounts": {
+      "active": 2,
+      "newTask": 1,
+      "completed": 1,
+      "failed": 0
+    },
     "tasks": [
       {
         "title": "Analyze user retention data",
