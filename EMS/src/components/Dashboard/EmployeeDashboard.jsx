@@ -8,9 +8,9 @@ export const EmployeeDashboard = ({data}) => {
 
     <div className='p-15 bg-[#1c1c1c] h-screen'>
       <h1>{data.id}</h1>
-      <Header/>
-      <TaskListNumber/>
-      <TaskList/>
+      <Header data = {data} />
+      <TaskListNumber data= {data}/>
+      <TaskList data= {data} />
     </div>
   )
 }
