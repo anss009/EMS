@@ -31,6 +31,11 @@ const App = () => {
     //     } 
     // },[])
 
+    useEffect(()=>{
+      const loggedInUser = localStorage.getItem('loggedInUser')
+      console.log(loggedInUser )
+    })
+
 
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
