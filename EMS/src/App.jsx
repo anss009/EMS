@@ -19,7 +19,6 @@ const App = () => {
     const [user, setUser] = useState(null)
     const [loggedInUserData, setloggedInUserData] = useState(null)
     const authData = useContext(AuthContext)
-    console.log(authData)
 
     // useEffect(()=>{
     //     const loggedInUser = localStorage.getItem('loggedInUser')
@@ -31,10 +30,7 @@ const App = () => {
     //     } 
     // },[])
 
-    useEffect(()=>{
-      const loggedInUser = localStorage.getItem('loggedInUser')
-      console.log(loggedInUser )
-    })
+
 
 
     const handleLogin = (email, password)=>{

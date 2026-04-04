@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export const Login = ({handleLogin}) => {
-  console.log(handleLogin)
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
