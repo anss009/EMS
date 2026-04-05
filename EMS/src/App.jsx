@@ -31,7 +31,15 @@ const App = () => {
     // },[])
 
 
-
+useEffect(()=>{
+  const loggedInUser = localStorage.getItem('loggedInUser')
+  
+  if(loggedInUser){
+    const userData = JSON.parse(loggedInUser)
+    setUser(userData.role)
+    setloggedInUserData(userData.data)
+  }
+},[])
 
     const handleLogin = (email, password)=>{
       if(email =="admin@company.com"  && password  == '112233'){
@@ -42,7 +50,7 @@ const App = () => {
         if(employee){   
           setUser('employee')
           setloggedInUserData(employee)
-          localStorage.setItem('loggedInUser', JSON.stringify({role:'employee'}))
+          localStorage.setItem('loggedInUser', JSON.stringify({role:'employee', data:employee}))
         }else{
            alert("Invalid Credentials")
         }
