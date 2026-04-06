@@ -15,7 +15,6 @@ const CreateTask = () => {
 
     setTask({taskTitle, taskDescription,taskDate, category, active:false, newTask:true, failed:true, completed:false })
 
-    console.log(task)
 
   }  
   return (
