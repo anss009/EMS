@@ -15,7 +15,7 @@ const CreateTask = () => {
     setCategory('')
     setTaskDate('')
     setTaskDescription('')
-    setTaskTitle("")
+    setTaskTitle('')
 
   }  
   return (
