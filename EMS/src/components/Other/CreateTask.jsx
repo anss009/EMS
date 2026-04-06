@@ -17,7 +17,6 @@ const CreateTask = () => {
     setTaskDescription('')
     setTaskTitle("")
 
-    console.log(taskTitle,taskDescription ,category, asignTo , taskDate,   )
   }
   return (
     <div className='p-5 bg-[#1c1c1c] mt-7 rounded '>
