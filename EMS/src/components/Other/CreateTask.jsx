@@ -26,20 +26,18 @@ const CreateTask = () => {
       completed: false
     }
 
-    const data = userData
-    
+    const data = [...userData]
 
     data.forEach(function (elem) {
       if (asignTo == elem.firstName) {
         elem.tasks.push(task)
         elem.taskCounts.newTask = elem.taskCounts.newTask + 1
-        console.log(elem)
       }
     })
    
-   setUserData(data)
-  console.log(data)
-
+    setUserData(data)
+    localStorage.setItem('employees', JSON.stringify(data))
+    console.log(data)
 
 
     setTaskTitle('')
