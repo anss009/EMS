@@ -8,27 +8,37 @@ const CreateTask = () => {
   const [asignTo, setAsignTo] = useState('')
   const [category, setCategory] = useState('')
 
-  const [newTask, setNewTask] = useState({})
 
-  const submitHandler = (e)=>{
+  const submitHandler = (e) => {
     e.preventDefault()
 
-    setNewTask({taskTitle, taskDescription,taskDate, category, active:false, newTask:true, failed:false, completed:false })
-    
-    const data  =JSON.parse( localStorage.getItem('employees'))
+    const task = {
+      taskTitle,
+      taskDescription,
+      taskDate,
+      category,
+      active: false,
+      newTask: true,
+      failed: false,
+      completed: false
+    }
 
-      data.forEach(function(elem){
-        if(asignTo == elem.firstName){
-            elem.tasks.push(newTask)
-          
-            console.log(elem)
-        }
-      });
-      setAsignTo('')
-      setCategory('')
-      setNewTask('')
-      setTaskDate('')
-      setTaskDescription('') 
+    const data = JSON.parse(localStorage.getItem('employees'))
+
+    data.forEach(function (elem) {
+      if (asignTo == elem.firstName) {
+        elem.tasks.push(task)
+        elem.taskCounts.newTask = elem.taskCounts.newTask + 1
+        console.log(elem)
+      }
+    })
+    localStorage.setItem('employees', JSON.stringify(data))
+
+    setTaskTitle('')
+    setCategory('')
+    setAsignTo('')
+    setTaskDate('')
+    setTaskDescription('')
   }  
   return (
     <div className='p-5 bg-[#1c1c1c] mt-7 rounded '>
