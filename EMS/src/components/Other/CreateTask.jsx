@@ -26,7 +26,7 @@ const CreateTask = () => {
       completed: false
     }
 
-    const data = userData.employees
+    const data = userData
     
 
     data.forEach(function (elem) {
@@ -36,7 +36,11 @@ const CreateTask = () => {
         console.log(elem)
       }
     })
-    console.log(data )
+   
+   setUserData(data)
+  console.log(data)
+
+
 
     setTaskTitle('')
     setCategory('')
