@@ -8,14 +8,27 @@ const CreateTask = () => {
   const [asignTo, setAsignTo] = useState('')
   const [category, setCategory] = useState('')
 
-  const [task, setTask] = useState({})
+  const [newTask, setNewTask] = useState({})
 
   const submitHandler = (e)=>{
     e.preventDefault()
 
-    setTask({taskTitle, taskDescription,taskDate, category, active:false, newTask:true, failed:true, completed:false })
+    setNewTask({taskTitle, taskDescription,taskDate, category, active:false, newTask:true, failed:false, completed:false })
+    
+    const data  =JSON.parse( localStorage.getItem('employees'))
 
-
+      data.forEach(function(elem){
+        if(asignTo == elem.firstName){
+            elem.tasks.push(newTask)
+          
+            console.log(elem)
+        }
+      });
+      setAsignTo('')
+      setCategory('')
+      setNewTask('')
+      setTaskDate('')
+      setTaskDescription('')
   }  
   return (
     <div className='p-5 bg-[#1c1c1c] mt-7 rounded '>
