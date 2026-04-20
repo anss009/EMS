@@ -155,21 +155,6 @@ npm run lint     # Run ESLint checks
 
 ---
 
-## 🔮 Potential Future Improvements
-
-- [ ] Backend API with a real database (Node.js + MongoDB / PostgreSQL)
-- [ ] JWT-based authentication
-- [ ] Task due-date notifications / reminders
-- [ ] Admin analytics & reporting dashboard
-- [ ] Employee registration / management UI
-- [ ] Search and filter tasks by category or date
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ---
 
 <p align="center">Built with ❤️ using React + Vite</p>
