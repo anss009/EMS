@@ -1,42 +1,42 @@
-# 📋 EMS — Employee Management System
+#EMS — Employee Management System
 
 A modern, role-based **Employee Management System** built with React and Vite. It provides a clean admin interface for creating and assigning tasks to employees, and a personal dashboard for each employee to manage and track their own tasks.
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 > Run locally with `npm run dev` — see [Getting Started](#-getting-started) below.
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🔐 Authentication
+###  Authentication
 - Elegant dark-themed login page with glassmorphism card design
 - Role-based access control: **Admin** and **Employee** roles
 - Show/hide password toggle
 - Persistent session via `localStorage`
 
-### 🛠️ Admin Dashboard
+###  Admin Dashboard
 - **Create Tasks** — assign tasks to any employee by name, with title, description, category, and due date
 - **View All Tasks** — see every task across all employees in a consolidated list
 - **Task Stats** — live count of new, active, completed, and failed tasks per employee
 
-### 👤 Employee Dashboard
+###  Employee Dashboard
 - Personal task list filtered to the logged-in employee
 - Task status cards: **New**, **Active**, **Completed**, **Failed**
 - Accept tasks to mark them as active
 - Mark tasks as completed or failed
 - Task count summary displayed prominently
 
-### 💾 Data Persistence
+###  Data Persistence
 - All employee and task data is stored and synced with `localStorage`
 - No backend required — fully client-side
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 | Login | Admin Dashboard | Employee Dashboard |
 |---|---|---|
@@ -44,7 +44,7 @@ A modern, role-based **Employee Management System** built with React and Vite. I
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 EMS/
@@ -78,7 +78,7 @@ EMS/
 
 ---
 
-## 🧑‍💼 Demo Credentials
+## Demo Credentials
 
 ### Admin
 | Field    | Value                  |
@@ -98,7 +98,7 @@ EMS/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Technology       | Purpose                          |
 |------------------|----------------------------------|
@@ -111,7 +111,7 @@ EMS/
 
 ---
 
-## ⚡ Getting Started
+## Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) v18 or higher
@@ -145,7 +145,7 @@ npm run lint     # Run ESLint checks
 
 ---
 
-## 📝 How It Works
+##  How It Works
 
 1. **On first load**, seed data (5 employees with pre-assigned tasks) is written to `localStorage`.
 2. **Admin** logs in and can create new tasks — choosing a title, description, due date, category, and the employee to assign the task to.
@@ -157,4 +157,4 @@ npm run lint     # Run ESLint checks
 
 ---
 
-<p align="center">Built with ❤️ using React + Vite</p>
+<p align="center">Built with ❤️ and ☕</p>
