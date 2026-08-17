@@ -8,40 +8,54 @@
 }
 
 :root {
-  /* Ultra-Premium Dark SaaS Theme Palette */
-  --bg-deep: #090a0f;
-  --bg-surface: #0f1219;
-  --bg-card: #141722;
-  --bg-card-hover: #191e2b;
-  --bg-elevated: #1e2333;
-  --bg-input: #0d0f15;
-  --bg-input-focus: #121620;
+  /* ========================================================================
+     TEAL-600 + SLATE-800 / SLATE-50 + ORANGE-500 PALETTE
+     ======================================================================== */
 
-  /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-default: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(255, 255, 255, 0.18);
-  --border-accent: rgba(232, 168, 56, 0.35);
+  /* Neutral Backgrounds (Deep Slate to Slate-800) */
+  --bg-deep: #090d16;
+  --bg-surface: #0f172a;
+  --bg-card: #1e293b;
+  --bg-card-hover: #243248;
+  --bg-elevated: #293852;
+  --bg-input: #0b1120;
+  --bg-input-focus: #131d31;
 
-  /* Typography */
+  /* Refined Glass Borders */
+  --border-subtle: rgba(148, 163, 184, 0.08);
+  --border-default: rgba(148, 163, 184, 0.14);
+  --border-hover: rgba(20, 184, 166, 0.35);
+  --border-accent: rgba(20, 184, 166, 0.45);
+
+  /* Typography (Slate-50 to Slate-600) */
   --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-faint: #3b4252;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-faint: #475569;
 
-  /* Vibrant Accent & Status Tokens */
-  --accent: #e8a838;
-  --accent-hover: #f5b74c;
-  --accent-muted: rgba(232, 168, 56, 0.12);
-  --accent-glow: rgba(232, 168, 56, 0.25);
+  /* Primary Brand: Teal-600 & Teal-500 */
+  --primary: #0d9488;
+  --primary-hover: #14b8a6;
+  --primary-light: #2dd4bf;
+  --primary-gradient: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+  --primary-muted: rgba(13, 148, 136, 0.14);
+  --primary-glow: rgba(13, 148, 136, 0.28);
 
+  /* Accent Highlight: Orange-500 & Orange-400 */
+  --accent: #f97316;
+  --accent-hover: #fb923c;
+  --accent-gradient: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  --accent-muted: rgba(249, 115, 22, 0.14);
+  --accent-glow: rgba(249, 115, 22, 0.28);
+
+  /* Status Colors */
   --info: #38bdf8;
   --info-bg: rgba(56, 189, 248, 0.12);
   --info-border: rgba(56, 189, 248, 0.25);
 
-  --warning: #f59e0b;
-  --warning-bg: rgba(245, 158, 11, 0.12);
-  --warning-border: rgba(245, 158, 11, 0.25);
+  --warning: #f97316;
+  --warning-bg: rgba(249, 115, 22, 0.12);
+  --warning-border: rgba(249, 115, 22, 0.25);
 
   --success: #10b981;
   --success-bg: rgba(16, 185, 129, 0.12);
@@ -51,7 +65,7 @@
   --danger-bg: rgba(244, 63, 94, 0.12);
   --danger-border: rgba(244, 63, 94, 0.25);
 
-  /* Dimensions */
+  /* Geometry & Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -59,10 +73,11 @@
   --radius-pill: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow: 0 0 24px rgba(232, 168, 56, 0.18);
+  --shadow-teal: 0 0 24px rgba(13, 148, 136, 0.22);
+  --shadow-orange: 0 0 24px rgba(249, 115, 22, 0.22);
 
   --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,7 +94,7 @@ html, body {
 }
 
 /* ==========================================================================
-   AUTH / LOGIN / SIGNUP SCENE
+   AUTH / LOGIN / SIGNUP SCENE (TEAL & SLATE-800)
    ========================================================================== */
 
 .login-scene {
@@ -87,20 +102,20 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-deep);
+  background: radial-gradient(circle at 50% 15%, #0f222b 0%, var(--bg-deep) 70%);
   position: relative;
   overflow: hidden;
   padding: 24px 16px;
 }
 
-/* Modern Geometric Mesh Overlay */
+/* Geometric Teal Grid Mesh */
 .login-scene::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(20, 184, 166, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 184, 166, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, black 25%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, black 25%, transparent 100%);
@@ -109,13 +124,13 @@ html, body {
 .login-scene::after {
   content: '';
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 580px;
-  height: 580px;
+  width: 600px;
+  height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 168, 56, 0.08) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 65%);
   pointer-events: none;
 }
 
@@ -139,13 +154,13 @@ html, body {
 }
 
 .login-card__inner {
-  background: var(--bg-card);
+  background: rgba(30, 41, 59, 0.88);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
   padding: 38px 32px 32px;
   position: relative;
   box-shadow: var(--shadow-lg);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
 }
 
 .login-card__inner::before {
@@ -155,8 +170,8 @@ html, body {
   left: 32px;
   right: 32px;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.6;
+  background: linear-gradient(90deg, transparent, #14b8a6, #f97316, transparent);
+  opacity: 0.85;
 }
 
 .login-brand {
@@ -171,14 +186,14 @@ html, body {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), #f59e0b);
+  background: var(--primary-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 18px;
-  color: #0c0e13;
-  box-shadow: 0 4px 12px var(--accent-glow);
+  color: #f8fafc;
+  box-shadow: 0 4px 14px var(--primary-glow);
 }
 
 .login-brand__text {
@@ -200,7 +215,7 @@ html, body {
 .login-subtitle {
   text-align: center;
   font-size: 13.5px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-bottom: 24px;
 }
 
@@ -224,16 +239,16 @@ html, body {
   border-radius: var(--radius-sm);
   border: none;
   background: transparent;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .auth-role-tab--active {
-  background: var(--bg-elevated);
-  color: var(--text-primary);
+  background: var(--bg-card);
+  color: var(--primary-light);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-hover);
 }
 
 /* Feedback Alerts */
@@ -325,8 +340,8 @@ html, body {
 }
 
 .login-field__input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-muted);
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px var(--primary-muted);
   background: var(--bg-input-focus);
 }
 
@@ -354,22 +369,22 @@ html, body {
   margin-top: 6px;
   width: 100%;
   padding: 13px;
-  background: linear-gradient(135deg, var(--accent), #d97706);
+  background: var(--primary-gradient);
   border: none;
   border-radius: var(--radius-md);
-  color: #090a0f;
+  color: #f8fafc;
   font-size: 14.5px;
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--font);
   cursor: pointer;
-  box-shadow: 0 4px 16px var(--accent-glow);
+  box-shadow: 0 4px 18px var(--primary-glow);
   transition: all var(--transition-fast);
 }
 
 .login-submit:hover {
   opacity: 0.95;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(232, 168, 56, 0.35);
+  box-shadow: 0 6px 24px rgba(20, 184, 166, 0.4);
 }
 
 .login-submit:active {
@@ -413,9 +428,9 @@ html, body {
 }
 
 .auth-pill:hover {
-  background: var(--bg-elevated);
-  border-color: var(--accent);
-  color: var(--accent);
+  background: var(--bg-card);
+  border-color: var(--primary-light);
+  color: var(--primary-light);
 }
 
 .login-divider {
@@ -441,7 +456,7 @@ html, body {
 
 .login-footer {
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   font-size: 13.5px;
 }
 
@@ -464,7 +479,7 @@ html, body {
 
 
 /* ==========================================================================
-   APP SHELL / NAVBAR
+   APP SHELL / NAVBAR (SLATE-900 / TEAL & ORANGE ACCENTS)
    ========================================================================== */
 
 .ems-dashboard-layout {
@@ -478,7 +493,7 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 18, 25, 0.85);
+  background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
   padding: 16px 40px;
@@ -503,14 +518,14 @@ html, body {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent), #f59e0b);
+  background: var(--primary-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
   font-size: 17px;
-  color: #0c0e13;
-  box-shadow: 0 2px 10px var(--accent-glow);
+  color: #f8fafc;
+  box-shadow: 0 2px 12px var(--primary-glow);
 }
 
 .ems-navbar__brand-title {
@@ -524,7 +539,7 @@ html, body {
 .ems-navbar__dashboard-tag {
   font-size: 12px;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--primary-light);
   letter-spacing: 0.2px;
 }
 
@@ -538,7 +553,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: var(--bg-surface);
+  background: var(--bg-input);
   border: 1px solid var(--border-subtle);
   padding: 7px 14px;
   border-radius: var(--radius-pill);
@@ -562,13 +577,13 @@ html, body {
   height: 30px;
   border-radius: 50%;
   background: var(--bg-elevated);
-  border: 1.5px solid var(--accent);
+  border: 1.5px solid var(--primary-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--primary-light);
 }
 
 .ems-navbar__user-info {
@@ -591,7 +606,7 @@ html, body {
 }
 
 .ems-navbar__user-role--emp {
-  color: var(--info);
+  color: var(--primary-light);
 }
 
 .ems-navbar__user-role--admin {
@@ -631,7 +646,7 @@ html, body {
 
 
 /* ==========================================================================
-   OVERVIEW & METRICS (EMPLOYEE DASHBOARD)
+   OVERVIEW & METRICS (SLATE-800 CARDS WITH TEAL & ORANGE)
    ========================================================================== */
 
 .ems-overview-section {
@@ -654,7 +669,7 @@ html, body {
 
 .ems-section-subtitle {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-top: 2px;
 }
 
@@ -679,7 +694,7 @@ html, body {
 .ems-completion-badge__value {
   font-size: 14px;
   font-weight: 800;
-  color: var(--success);
+  color: var(--primary-light);
 }
 
 .ems-stats {
@@ -752,9 +767,9 @@ html, body {
 .ems-stat--active .ems-stat__pill { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning-border); }
 .ems-stat--active .ems-stat__number { color: var(--warning); }
 
-.ems-stat--completed .ems-stat__icon-box { background: var(--success-bg); color: var(--success); }
-.ems-stat--completed .ems-stat__pill { background: var(--success-bg); color: var(--success); border: 1px solid var(--success-border); }
-.ems-stat--completed .ems-stat__number { color: var(--success); }
+.ems-stat--completed .ems-stat__icon-box { background: var(--primary-muted); color: var(--primary-light); }
+.ems-stat--completed .ems-stat__pill { background: var(--primary-muted); color: var(--primary-light); border: 1px solid rgba(20, 184, 166, 0.25); }
+.ems-stat--completed .ems-stat__number { color: var(--primary-light); }
 
 .ems-stat--failed .ems-stat__icon-box { background: var(--danger-bg); color: var(--danger); }
 .ems-stat--failed .ems-stat__pill { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger-border); }
@@ -806,9 +821,9 @@ html, body {
 
 .ems-filter-pill--active {
   background: var(--bg-elevated);
-  color: var(--accent);
+  color: var(--primary-light);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-hover);
 }
 
 .ems-tasklist {
@@ -887,11 +902,11 @@ html, body {
 .ems-task-card__badge--active .ems-task-card__badge-dot { background: var(--warning); box-shadow: 0 0 6px var(--warning); }
 
 .ems-task-card__badge--completed {
-  background: var(--success-bg);
-  color: var(--success);
-  border: 1px solid var(--success-border);
+  background: var(--primary-muted);
+  color: var(--primary-light);
+  border: 1px solid rgba(20, 184, 166, 0.25);
 }
-.ems-task-card__badge--completed .ems-task-card__badge-dot { background: var(--success); box-shadow: 0 0 6px var(--success); }
+.ems-task-card__badge--completed .ems-task-card__badge-dot { background: var(--primary-light); box-shadow: 0 0 6px var(--primary-light); }
 
 .ems-task-card__badge--failed {
   background: var(--danger-bg);
@@ -972,13 +987,13 @@ html, body {
 }
 
 .ems-btn--complete {
-  background: var(--success-bg);
-  color: var(--success);
-  border-color: var(--success-border);
+  background: var(--primary-muted);
+  color: var(--primary-light);
+  border-color: rgba(20, 184, 166, 0.25);
 }
 .ems-btn--complete:hover {
-  background: rgba(16, 185, 129, 0.24);
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  background: rgba(20, 184, 166, 0.25);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
 }
 
 .ems-btn--fail {
@@ -1005,9 +1020,9 @@ html, body {
 }
 
 .ems-task-status-pill--success {
-  background: var(--success-bg);
-  color: var(--success);
-  border: 1px solid var(--success-border);
+  background: var(--primary-muted);
+  color: var(--primary-light);
+  border: 1px solid rgba(20, 184, 166, 0.25);
 }
 
 .ems-task-status-pill--failed {
@@ -1071,7 +1086,7 @@ html, body {
 
 .ems-create-task__subtitle {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   margin-top: 2px;
 }
 
@@ -1132,8 +1147,8 @@ html, body {
 }
 
 .ems-create-task__select option {
-  background: #141722;
-  color: #fff;
+  background: #1e293b;
+  color: #f8fafc;
 }
 
 .ems-create-task__textarea {
@@ -1145,8 +1160,8 @@ html, body {
 .ems-create-task__input:focus,
 .ems-create-task__select:focus,
 .ems-create-task__textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-muted);
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px var(--primary-muted);
   background: var(--bg-input-focus);
 }
 
@@ -1157,15 +1172,15 @@ html, body {
   justify-content: center;
   gap: 8px;
   padding: 13px;
-  background: linear-gradient(135deg, var(--accent), #d97706);
+  background: var(--primary-gradient);
   border: none;
   border-radius: var(--radius-md);
-  color: #090a0f;
+  color: #f8fafc;
   font-size: 14px;
   font-weight: 800;
   font-family: var(--font);
   cursor: pointer;
-  box-shadow: 0 4px 16px var(--accent-glow);
+  box-shadow: 0 4px 18px var(--primary-glow);
   transition: all var(--transition-fast);
   margin-top: 4px;
 }
@@ -1173,7 +1188,7 @@ html, body {
 .ems-create-task__submit:hover {
   opacity: 0.95;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(232, 168, 56, 0.35);
+  box-shadow: 0 6px 24px rgba(20, 184, 166, 0.4);
 }
 
 /* Admin Team Table */
@@ -1226,7 +1241,7 @@ html, body {
 }
 
 .ems-table__row:hover {
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .ems-table__cell {
@@ -1246,14 +1261,14 @@ html, body {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #334155, #1e293b);
-  border: 1.5px solid var(--border-hover);
+  background: linear-gradient(135deg, #0d9488, #042f2e);
+  border: 1.5px solid var(--primary-light);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #f8fafc;
 }
 
 .ems-table__user-name {
@@ -1281,7 +1296,7 @@ html, body {
 
 .ems-count-pill--new { background: var(--info-bg); color: var(--info); border: 1px solid var(--info-border); }
 .ems-count-pill--active { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning-border); }
-.ems-count-pill--completed { background: var(--success-bg); color: var(--success); border: 1px solid var(--success-border); }
+.ems-count-pill--completed { background: var(--primary-muted); color: var(--primary-light); border: 1px solid rgba(20, 184, 166, 0.25); }
 .ems-count-pill--failed { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger-border); }
 
 .ems-table__total-tag {
