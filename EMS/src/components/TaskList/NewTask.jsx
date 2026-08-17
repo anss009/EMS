@@ -1,21 +1,38 @@
 import React from 'react'
 
-const NewTask = ({data}) => {
+const NewTask = ({ data, onAccept }) => {
   return (
-    <div className=' h-full flex-shrink-0  w-[300px] bg-cyan-400 p-5 rounded-xl'>
-        <div className=' flex justify-between items-center '>
-          <h3 className='bg-red-600 px-3 py-1 rounded text-sm '>{data.category}</h3>
-          <h4 className='text-sm'>{data.date}</h4>
+    <div className="ems-task-card ems-task-card--new ems-animate-in">
+      <div className="ems-task-card__top">
+        <span className="ems-task-card__badge ems-task-card__badge--new">
+          <span className="ems-task-card__badge-dot"></span> New
+        </span>
+        <div className="ems-task-card__date-chip">
+          <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span>{data.date}</span>
         </div>
-          <h2 className='mt-5 text-2xl font-semibold'>{data.taskTitle}</h2>
-          <p className='text-sm mt-2'>
-           {data.description}
-          </p>
-          <div className='mt-2'>
-            <button className='w-full bg-blue-500 rounded py-1 px-2 text-sm'>Accept Task</button>
-          </div>
-        
       </div>
+
+      <span className="ems-task-card__category">{data.category}</span>
+      <h3 className="ems-task-card__title">{data.taskTitle}</h3>
+      <p className="ems-task-card__desc">{data.description}</p>
+
+      <div className="ems-task-card__actions">
+        <button
+          type="button"
+          onClick={onAccept}
+          className="ems-btn ems-btn--accept"
+          title="Accept this task to start working"
+        >
+          <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          Accept Task
+        </button>
+      </div>
+    </div>
   )
 }
 

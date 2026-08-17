@@ -3,13 +3,14 @@ import Header from '../Other/Header'
 import TaskListNumber from '../Other/TaskListNumber'
 import TaskList from '../TaskList/TaskList'
 
-export const EmployeeDashboard = (props) => {
+export const EmployeeDashboard = ({ changeUser, data, onTaskStatusChange }) => {
   return (
-
-    <div className='p-15 bg-[#1c1c1c] h-screen'>
-      <Header changeUser = {props.changeUser} data = {props.data} />
-      <TaskListNumber data= {props.data}/>
-      <TaskList data= {props.data} />
+    <div className="ems-dashboard-layout">
+      <Header changeUser={changeUser} data={data} role="employee" />
+      <main className="ems-main-content">
+        <TaskListNumber data={data} />
+        <TaskList data={data} onTaskStatusChange={onTaskStatusChange} />
+      </main>
     </div>
   )
 }

@@ -3,13 +3,14 @@ import Header from '../Other/Header'
 import CreateTask from '../Other/CreateTask'
 import AllTask from '../Other/AllTask'
 
-const AdminDashboard = (props) => {
+const AdminDashboard = ({ changeUser, data }) => {
   return (
-    <div className='h-full w-full p-7 '>
-        
-        <Header changeUser = {props.changeUser}/>
-       <CreateTask/>
-        <AllTask/>
+    <div className="ems-dashboard-layout">
+      <Header changeUser={changeUser} data={data} role="admin" />
+      <main className="ems-main-content">
+        <CreateTask />
+        <AllTask />
+      </main>
     </div>
   )
 }
