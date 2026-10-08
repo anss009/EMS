@@ -1,4 +1,5 @@
 import React from 'react'
+import ThemeToggle from './ThemeToggle'
 
 const Header = ({ changeUser, data, role = 'employee' }) => {
   const logOutUser = () => {
@@ -39,6 +40,8 @@ const Header = ({ changeUser, data, role = 'employee' }) => {
           </svg>
           <span>{today}</span>
         </div>
+
+        <ThemeToggle />
 
         <div className="ems-navbar__user-pill">
           <div className="ems-navbar__avatar">
